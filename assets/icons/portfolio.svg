@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="Portfolio">
+  <path fill="#8b5cf6" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 14.5h-2v-6h2v6zm0-7.5h-2V7h2v2z"/>
+  <circle fill="none" stroke="#8b5cf6" stroke-width="1.5" cx="12" cy="12" r="9"/>
+</svg>
