@@ -1,23 +1,15 @@
 #!/usr/bin/env python3
-"""Generate a themed GitHub contribution visualization SVG."""
+"""Generate a themed GitHub contribution visualization SVG using curl output."""
 
-from __future__ import annotations
-
-import json
-import ssl
-import subprocess
-import sys
-import urllib.request
-from datetime import datetime, timezone
+import json, sys, subprocess
+from datetime import datetime
 from pathlib import Path
 
 USERNAME = "sanath-2512"
 API_URL = f"https://github-contributions-api.jogruber.de/v4/{USERNAME}?y=last"
 OUTPUT = Path(__file__).resolve().parent.parent / "assets" / "activity-graph.svg"
 
-# Theme: dark futuristic cyan/violet
 COLORS = ["#0f172a", "#1e293b", "#164e63", "#0891b2", "#00d4ff"]
-BG = "#0d1117"
 TEXT = "#94a3b8"
 TITLE = "#e2e8f0"
 LINE = "#00d4ff"
@@ -25,41 +17,24 @@ POINT = "#8b5cf6"
 ACCENT = "#22d3ee"
 
 
-def fetch_contributions() -> dict:
-    """Fetch contribution data; falls back to curl if SSL verification fails."""
-    try:
-        ctx = ssl.create_default_context()
-        with urllib.request.urlopen(API_URL, timeout=30, context=ctx) as resp:
-            return json.load(resp)
-    except Exception:
-        # urllib wraps SSLCertVerificationError inside URLError, catch broadly
-        pass
-    try:
-        # macOS Python 3.14 SSL cert issue - bypass with unverified context
-        ctx = ssl._create_unverified_context()  # noqa: S501
-        with urllib.request.urlopen(API_URL, timeout=30, context=ctx) as resp:
-            return json.load(resp)
-    except Exception:
-        pass
-    # Last resort: use system curl (works on macOS without cert issues)
+def fetch_contributions():
     result = subprocess.run(["curl", "-s", API_URL], capture_output=True, text=True, check=True)
     return json.loads(result.stdout)
 
 
-def level_color(count: int, max_count: int) -> str:
+def level_color(count, max_count):
     if count == 0:
         return COLORS[0]
     idx = min(len(COLORS) - 1, max(1, round((count / max(max_count, 1)) * (len(COLORS) - 1))))
     return COLORS[idx]
 
 
-def build_svg(data: dict) -> str:
-    contribs = data["contributions"]
-    total = data["total"].get("lastYear", sum(c["count"] for c in contribs))
-    max_count = max((c["count"] for c in contribs), default=1)
+def build_svg(data):
+    cs = data["contributions"]
+    total = data["total"].get("lastYear", sum(c["count"] for c in cs))
+    max_count = max((c["count"] for c in cs), default=1)
 
-    # Last 31 days for line chart
-    recent = contribs[-31:]
+    recent = cs[-31:]
     chart_w, chart_h = 740, 120
     chart_x, chart_y = 40, 48
     points = []
@@ -69,10 +44,9 @@ def build_svg(data: dict) -> str:
         points.append((x, y, day["count"]))
 
     polyline = " ".join(f"{x:.1f},{y:.1f}" for x, y, _ in points)
-    area = polyline + f" {chart_x + chart_w:.1f},{chart_y + chart_h:.1f} {chart_x:.1f},{chart_y + chart_h:.1f}"
+    area = polyline + f" {chart_x+chart_w:.1f},{chart_y+chart_h:.1f} {chart_x:.1f},{chart_y+chart_h:.1f}"
 
-    # Heatmap: last 26 weeks
-    weeks = [contribs[i : i + 7] for i in range(max(0, len(contribs) - 26 * 7), len(contribs), 7)]
+    weeks = [cs[i: i + 7] for i in range(max(0, len(cs) - 26 * 7), len(cs), 7)]
     cell, gap = 11, 3
     heat_x, heat_y = 40, 200
 
@@ -82,8 +56,7 @@ def build_svg(data: dict) -> str:
             x = heat_x + wi * (cell + gap)
             y = heat_y + di * (cell + gap)
             heat_cells.append(
-                f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2" '
-                f'fill="{level_color(day["count"], max_count)}"/>'
+                f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2" fill="{level_color(day["count"], max_count)}"/>'
             )
 
     point_dots = "".join(
@@ -91,9 +64,10 @@ def build_svg(data: dict) -> str:
         for x, y, c in points if c > 0
     )
 
-    updated = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    updated = datetime.utcnow().strftime("%Y-%m-%d")
+    heat_str = "".join(heat_cells)
 
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 290" role="img" aria-label="Contribution activity">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 290" role="img" aria-label="Contribution activity">
   <defs>
     <linearGradient id="panel" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0d1117"/>
@@ -119,14 +93,14 @@ def build_svg(data: dict) -> str:
   {point_dots}
   <text x="40" y="{chart_y + chart_h + 18}" class="mono" fill="{TEXT}" font-size="10">31-day activity trend</text>
 
-  {''.join(heat_cells)}
+  {heat_str}
   <text x="40" y="278" class="mono" fill="{TEXT}" font-size="10">contribution heatmap / updated {updated}</text>
   <circle cx="770" cy="278" r="3" fill="{ACCENT}" class="pulse"/>
 </svg>
-'''
+"""
 
 
-def main() -> int:
+def main():
     output = Path(sys.argv[1]) if len(sys.argv) > 1 else OUTPUT
     data = fetch_contributions()
     svg = build_svg(data)
