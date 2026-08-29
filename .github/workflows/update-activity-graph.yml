@@ -1,0 +1,35 @@
+name: Update Activity Graph
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/generate_activity_graph.py
+      - .github/workflows/update-activity-graph.yml
+
+permissions:
+  contents: write
+
+jobs:
+  update-graph:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate activity graph SVG
+        run: python3 scripts/generate_activity_graph.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/activity-graph.svg
+          if git diff --staged --quiet; then
+            echo "No changes to activity graph"
+          else
+            git commit -m "chore: update contribution activity graph"
+            git push
+          fi

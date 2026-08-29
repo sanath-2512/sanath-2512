@@ -1,81 +1,90 @@
 <div align="center">
 
-# Sanath Waraikar
+<!-- HERO — cinematic terminal boot -->
+<img src="./assets/hero-boot.svg" width="100%" alt="Sanath Waraikar — system boot sequence"/>
 
-### Full-stack engineer building AI-powered web applications
+<!-- ANIMATED IDENTITY — ScribeSVG terminal typing -->
+<a href="https://github.com/DhanushNehru/ScribeSVG">
+  <img src="https://scribesvg.vercel.app/api/render?layout=terminal&theme=cyberpunk&font=JetBrains%20Mono&width=820&height=110&size=18&lines=Building%20AI-powered%20full-stack%20products%3BEngineering%20multi-agent%20systems%3BStructured%20LLM%20output%20%26%20automation%3BTurning%20ideas%20into%20deployed%20software&gradient=00d4ff%2C8b5cf6&color=e2e8f0&cursor=block&textGlow=2&background=0d1117" alt="Animated identity typing"/>
+</a>
 
-<a href="https://portfolioo-one-gamma.vercel.app">Portfolio</a>
-&nbsp;·&nbsp;
-<a href="https://www.linkedin.com/in/sanath-waraikar-4ba35b308/">LinkedIn</a>
-&nbsp;·&nbsp;
-<a href="mailto:sanath.waraikar2024@nst.rishihood.edu.in">Email</a>
-&nbsp;·&nbsp;
-<a href="https://portfolioo-one-gamma.vercel.app/resume-sanath-waraikar.pdf">Resume</a>
+<!-- SOCIAL NAV -->
+<br/>
+
+<a href="https://github.com/sanath-2512" title="GitHub"><img src="https://cdn.simpleicons.org/github/e2e8f0" width="22" alt="GitHub"/></a>
+&nbsp;&nbsp;
+<a href="https://www.linkedin.com/in/sanath-waraikar-4ba35b308/" title="LinkedIn"><img src="https://cdn.simpleicons.org/linkedin/00d4ff" width="22" alt="LinkedIn"/></a>
+&nbsp;&nbsp;
+<a href="https://portfolioo-one-gamma.vercel.app" title="Portfolio"><img src="https://cdn.simpleicons.org/vercel/8b5cf6" width="22" alt="Portfolio"/></a>
+&nbsp;&nbsp;
+<a href="https://portfolioo-one-gamma.vercel.app/resume-sanath-waraikar.pdf" title="Resume"><img src="https://cdn.simpleicons.org/readthedocs/22d3ee" width="22" alt="Resume"/></a>
+&nbsp;&nbsp;
+<a href="mailto:sanath.waraikar2024@nst.rishihood.edu.in" title="Email"><img src="https://cdn.simpleicons.org/gmail/f87171" width="22" alt="Email"/></a>
 
 </div>
 
----
+<img src="./assets/divider.svg" width="100%" alt=""/>
 
-I build and deploy full-stack software with LLM backends — FastAPI and Express on the server, React and Next.js on the client. I care about structured AI output, clear product flows, and tools that solve real problems instead of demo-ware.
+<!-- WHO I AM -->
+<table width="100%">
+<tr>
+<td>
 
-Currently at **Rishihood University** · open-source contributor (**GSSoC 2025**)
+### `> whoami`
 
----
+```text
+Engineering student at Rishihood University.
+Full-stack builder shipping AI-powered web applications.
+I design systems where LLMs produce structured, usable output —
+not demo-ware. Open-source contributor · GSSoC 2025.
+```
 
-### Currently building
+</td>
+</tr>
+</table>
 
-→ **[WorthyApply](https://github.com/sanath-2512/Worthyapply)** — multi-agent job application analysis, resume builder, PDF extraction  
-→ **[EduAI](https://github.com/sanath-2512/EduAI.)** — AI-generated courses, quizzes, and progress tracking  
-→ Document extraction → training-data pipelines for domain-specific LLM fine-tuning
+<img src="./assets/divider.svg" width="100%" alt=""/>
 
----
+<!-- CURRENTLY BUILDING -->
+<div align="center">
+  <img src="./assets/status-panel.svg" width="100%" alt="Currently building dashboard"/>
+</div>
 
-### Stack
+<img src="./assets/divider.svg" width="100%" alt=""/>
 
-**Languages**  
-Python · JavaScript · TypeScript · HTML/CSS
+<!-- FEATURED PROJECTS -->
+<div align="center">
 
-**AI / ML**  
-LangChain · Groq · Structured LLM output (Pydantic) · PDF text extraction · Docling · MLX QLoRA
+### `featured_projects`
 
-**Backend**  
-FastAPI · Express · Node.js · Prisma · JWT auth · REST APIs
+<i>Products that define what I build — intelligent systems with real user flows.</i>
 
-**Frontend**  
-React · Next.js · Vite · Tailwind CSS · Framer Motion · GSAP · Three.js
+</div>
 
-**Data & deploy**  
-MongoDB · Vercel · Render · Netlify
-
-**Tools**  
-Git · GitHub
-
----
-
-### Featured work
-
-<table>
+<table width="100%">
 <tr>
 <td width="50%" valign="top">
 
 #### [WorthyApply](https://github.com/sanath-2512/Worthyapply)
 
-Upload a resume and job description — get structured role analysis, a match score, skill gaps, and grounded bullet improvements.
+> **Multi-agent job intelligence**  
+> Upload resume + JD → structured analysis, match score, skill gaps, grounded rewrites.
 
-`FastAPI` `Next.js` `LangChain` `TypeScript`
+`FastAPI` · `Next.js` · `LangChain` · `TypeScript`
 
-[Repository](https://github.com/sanath-2512/Worthyapply) · [Live demo](https://worthyapply-sigma.vercel.app)
+**→** [Repository](https://github.com/sanath-2512/Worthyapply) · [Live demo](https://worthyapply-sigma.vercel.app)
 
 </td>
 <td width="50%" valign="top">
 
 #### [EduAI](https://github.com/sanath-2512/EduAI.)
 
-Full-stack learning platform that generates courses and quizzes from a topic, with auth, dashboards, and progress tracking.
+> **AI-native learning platform**  
+> Generates courses and quizzes from a topic — auth, dashboards, progress tracking.
 
-`Express` `React` `Prisma` `MongoDB` `Groq`
+`Express` · `React` · `Prisma` · `MongoDB` · `Groq`
 
-[Repository](https://github.com/sanath-2512/EduAI.) · [Live demo](https://edu-ai-rho-hazel.vercel.app)
+**→** [Repository](https://github.com/sanath-2512/EduAI.) · [Live demo](https://edu-ai-rho-hazel.vercel.app)
 
 </td>
 </tr>
@@ -84,57 +93,124 @@ Full-stack learning platform that generates courses and quizzes from a topic, wi
 
 #### [portfolioo](https://github.com/sanath-2512/portfolioo)
 
-Personal portfolio site — Three.js hero, smooth scroll, project showcase, and resume download.
+> **Design meets engineering**  
+> Three.js hero, smooth scroll, project showcase, resume download.
 
-`React` `Vite` `Three.js` `GSAP` `Tailwind`
+`React` · `Vite` · `Three.js` · `GSAP` · `Tailwind`
 
-[Repository](https://github.com/sanath-2512/portfolioo) · [Live site](https://portfolioo-one-gamma.vercel.app)
+**→** [Repository](https://github.com/sanath-2512/portfolioo) · [Live site](https://portfolioo-one-gamma.vercel.app)
 
 </td>
 <td width="50%" valign="top">
 
 #### [Viewly](https://github.com/sanath-2512/Viewly)
 
-Frontend UI project focused on layout, interaction, and polished component design.
+> **Polished frontend craft**  
+> Layout, interaction, and component design focused UI project.
 
-`React` `JavaScript`
+`React` · `JavaScript`
 
-[Repository](https://github.com/sanath-2512/Viewly) · [Live demo](https://viewlyy.netlify.app)
+**→** [Repository](https://github.com/sanath-2512/Viewly) · [Live demo](https://viewlyy.netlify.app)
 
 </td>
 </tr>
 </table>
 
-<br>
-
 #### [Maths Balance](https://github.com/sanath-2512/MathsBalance-gamdevjs-2025)
 
-Educational browser game for the GameDev.js Jam 2025 — teaches mathematical balance through interactive scenarios.
+> **GameDev.js Jam 2025** — educational browser game teaching mathematical balance through interactive scenarios.
 
-`JavaScript` `HTML/CSS`
+`JavaScript` · `HTML/CSS` · **→** [Play on itch.io](https://mavros-lykos.itch.io/math-balance)
 
-[Repository](https://github.com/sanath-2512/MathsBalance-gamdevjs-2025) · [Play on itch.io](https://mavros-lykos.itch.io/math-balance)
+<img src="./assets/divider.svg" width="100%" alt=""/>
 
----
-
-### Exploring
-
-Multi-provider LLM fallback chains · document-to-dataset pipelines · local fine-tuning on Apple Silicon · production deployment patterns for AI apps
-
----
-
+<!-- SIGNATURE WOW COMPONENT -->
 <div align="center">
 
-**Let's build something useful.**
+### `agent_pipeline`
 
-<br>
+<i>Custom visualization of how I architect AI products — from raw input to deployed software.</i>
 
-<a href="https://github.com/sanath-2512">GitHub</a>
-&nbsp;·&nbsp;
-<a href="https://www.linkedin.com/in/sanath-waraikar-4ba35b308/">LinkedIn</a>
-&nbsp;·&nbsp;
-<a href="https://portfolioo-one-gamma.vercel.app">Portfolio</a>
-&nbsp;·&nbsp;
-<a href="mailto:sanath.waraikar2024@nst.rishihood.edu.in">Email</a>
+<img src="./assets/agent-pipeline.svg" width="100%" alt="Animated AI agent pipeline — input, extract, reason, structure, ship"/>
+
+</div>
+
+<img src="./assets/divider.svg" width="100%" alt=""/>
+
+<!-- TECH ECOSYSTEM -->
+<div align="center">
+
+### `tech_ecosystem`
+
+</div>
+
+<table width="100%">
+<tr>
+<td width="25%" valign="top">
+
+**LANGUAGES**
+
+Python · JavaScript · TypeScript · HTML/CSS · C++
+
+</td>
+<td width="25%" valign="top">
+
+**AI / ML**
+
+LangChain · Groq · LLMs · RAG · Agents · Pydantic · Docling · MLX QLoRA
+
+</td>
+<td width="25%" valign="top">
+
+**BACKEND**
+
+FastAPI · Express · Node.js · Prisma · JWT · REST APIs
+
+</td>
+<td width="25%" valign="top">
+
+**FRONTEND & DEPLOY**
+
+React · Next.js · Vite · Tailwind · Three.js · GSAP · MongoDB · Vercel · Render
+
+</td>
+</tr>
+</table>
+
+<img src="./assets/divider.svg" width="100%" alt=""/>
+
+<!-- ACTIVITY -->
+<div align="center">
+
+### `activity`
+
+<i>Custom contribution visualization — auto-updated daily via GitHub Actions.</i>
+
+</div>
+
+<img src="./assets/activity-graph.svg" width="100%" alt="Contribution activity graph and heatmap"/>
+
+<img src="./assets/divider.svg" width="100%" alt=""/>
+
+<!-- CONNECT -->
+<div align="center">
+
+### `connect`
+
+Building useful AI systems · open to collaboration on ambitious products
+
+<br/>
+
+<a href="https://github.com/sanath-2512"><img src="https://cdn.simpleicons.org/github/e2e8f0" width="20" alt="GitHub"/></a>
+&nbsp;
+<a href="https://www.linkedin.com/in/sanath-waraikar-4ba35b308/"><img src="https://cdn.simpleicons.org/linkedin/00d4ff" width="20" alt="LinkedIn"/></a>
+&nbsp;
+<a href="https://portfolioo-one-gamma.vercel.app"><img src="https://cdn.simpleicons.org/vercel/8b5cf6" width="20" alt="Portfolio"/></a>
+&nbsp;
+<a href="mailto:sanath.waraikar2024@nst.rishihood.edu.in"><img src="https://cdn.simpleicons.org/gmail/f87171" width="20" alt="Email"/></a>
+
+<br/><br/>
+
+<sub>engineered with custom SVG · ScribeSVG · activity graph · zero JavaScript in README</sub>
 
 </div>
