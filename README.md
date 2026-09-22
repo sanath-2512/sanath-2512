@@ -24,7 +24,7 @@
 <img src="assets/divider.svg" width="820" alt=""/>
 
 <!-- WHO I AM -->
-<table width="100%">
+<table width="100%"> 
 <tr>
 <td>
 
