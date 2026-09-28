@@ -9,7 +9,7 @@
 <!-- SOCIAL NAV -->
 <br/>
 
-<a href="https://github.com/sanath-2512" title="GitHub"><img src="assets/icons/github.svg" width="24" height="24" alt="GitHub"/></a>
+<a href="https://github.com/sanath-2512" title="GitHub"><img src="assets/icons/github.svg" width ="24" height="24" alt="GitHub"/></a>
 &nbsp;&nbsp;
 <a href="https://www.linkedin.com/in/sanath-waraikar-4ba35b308/" title="LinkedIn"><img src="assets/icons/linkedin.svg" width="24" height="24" alt="LinkedIn"/></a>
 &nbsp;&nbsp;
